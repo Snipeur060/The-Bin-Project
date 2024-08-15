@@ -9,4 +9,3 @@ Changement pour du micropython (plus simple)
 
 https://wokwi.com/projects/406307966555564033
 
-![image](https://github.com/user-attachments/assets/20fd94db-958f-4fc1-bc92-69fd12d40a1b)
