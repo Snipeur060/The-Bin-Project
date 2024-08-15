@@ -18,8 +18,10 @@ rled = Pin(14,Pin.OUT)
 buzz = Pin(28, Pin.OUT)
 numdetect = 0
 while True:
+  oled.fill(0)
   oled.text('Nombre de detect', 0, 0)
-  oled.text(f' {numdetect} fois',0,10)
+  a = str(numdetect)
+  oled.text(f' {a} fois',0,10)
 
   oled.show()
   if mvdetect.value() == 0:
@@ -29,9 +31,18 @@ while True:
     time.sleep(3)
   else:
     rled.on()
+    tm.show("OOOO",colon=False)
+    time.sleep(0.4)
+    tm.show("ccc",colon=False)
+    time.sleep(0.4)
+    tm.show("OOOO",colon=False)
     buzz.high()
     numdetect += 1
     print("detect")
+    oled.fill(0)
+    oled.text('ATTENTION', 0, 0)
+    oled.text('Detection', 0, 10)
+    oled.show()
     time.sleep(1)
     buzz.low()
   
