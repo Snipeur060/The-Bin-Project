@@ -1,10 +1,18 @@
 import tm1637
-from machine import Pin,SoftI2C
+from machine import Pin,SoftI2C,I2C
 import ssd1306
 import time
+from lcdi2c import LCDI2C
+import dht
 
 
 i2c = SoftI2C(scl=Pin(5), sda=Pin(4))
+
+sensor = dht.DHT22(Pin(13))
+sensor.measure() 
+print('INIT Bin project :')
+print(str(sensor.temperature()) + "°C")
+print(str(sensor.humidity())+"%")
 
 oled_width = 128
 oled_height = 64
